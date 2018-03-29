@@ -59,6 +59,16 @@ em {
     margin: 15px 5%;
     font-size: 120%;
     cursor: pointer;
+    overflow: hidden;
+}
+
+.main .list-group-item .o-label {
+    display: inline-block;
+    background: #f5f4ec;
+    color: #324bb0;
+    padding: 10px 15px;
+    margin: -10px 15px -10px -15px;
+    font-weight: 700;
 }
 
 /* ====================== */
@@ -67,8 +77,12 @@ em {
 
 /* main stuff */
 
-.option-list .list-group-item:hover {
+.main .option-list .list-group-item:hover {
     background: #4d67d6;
+}
+
+.main .list-group-item:hover .o-label {
+    color: #4d67d6;
 }
 
 /* waves */

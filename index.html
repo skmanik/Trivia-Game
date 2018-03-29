@@ -12,6 +12,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -36,25 +38,25 @@
             <div class="container game-panel">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3 class="text-center">What is in the "Secret Box" that Patrick hides from his friend Spongebob?</h3>
+                        <h3 class="text-center" id="question-panel"></h3>
                     </div>
                 </div>
                 <div class="row">
-                        <div class="col-md-12">
-                                <ul class="list-group option-list">
-                                    <li class="list-group-item">Cras justo odio</li>
-                                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                                    <li class="list-group-item">Morbi leo risus</li>
-                                    <li class="list-group-item">Porta ac consectetur ac</li>
-                                </ul>
-                        </div>
+                    <div class="col-md-12">
+                        <ul class="list-group option-list">
+                            <li class="list-group-item" id="o-a"><span class="o-label">A</span> <span class="opt">Cras justo odio</span></li>
+                            <li class="list-group-item" id="o-b"><span class="o-label">B</span> <span class="opt">Cras justo odio</span></li>
+                            <li class="list-group-item" id="o-c"><span class="o-label">C</span> <span class="opt">Cras justo odio</span></li>
+                            <li class="list-group-item" id="o-d"><span class="o-label">D</span> <span class="opt">Cras justo odio</span></li>
+                        </ul>
                     </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- js file -->
-
+    <script src="assets/javascript/app.js"></script>
 
 </body>
 
