@@ -29,13 +29,13 @@ em {
 
 .main .wrapper h1 {
     font-weight: 700;
-    font-size: 4em;
+    font-size: 4.5em;
 }
 
 .main .wrapper h1 span {
     display: block;
     padding: 0.75em 0 0.6em 0.1em;
-    font-size: 30%;
+    font-size: 26%;
     font-weight: 300;
 }
 
@@ -45,11 +45,13 @@ em {
 }
 
 .main .game-panel {
-    margin-top: 60px;
+    margin-top: 80px;
+    text-align: center;
 }
 
 .main .wrapper .option-list {
     margin-top: 25px;
+    text-align: left;
 }
 
 .main .option-list .list-group-item {
@@ -60,6 +62,8 @@ em {
     font-size: 120%;
     cursor: pointer;
     overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
 }
 
 .main .list-group-item .o-label {
@@ -69,6 +73,23 @@ em {
     padding: 10px 15px;
     margin: -10px 15px -10px -15px;
     font-weight: 700;
+}
+
+/* reset button */
+
+.reset-button {
+    position: relative;
+    top: -85px;
+    display: none;
+    padding: 17px 38px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+    background: #f5f4ec;
+    color: #324bb0;
+    border-radius: 40px;
+    cursor: pointer;
 }
 
 /* incorrect and correct buttons */
