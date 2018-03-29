@@ -190,7 +190,7 @@ function showAnswer(clicked){
         renderQuestion();
         console.log("Answer displayed", questionIndex);
 
-    }, 1000);
+    }, 3500);
 
 };
 
@@ -210,7 +210,7 @@ function showAnswerDefault () {
         questionIndex++;
         renderQuestion();
 
-    }, 1000);
+    }, 3500);
 
 };
 
