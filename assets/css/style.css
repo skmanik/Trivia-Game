@@ -126,8 +126,6 @@ em {
 
 /* waves */
 
-/* prefix this shit */
-
 .waves {
 	width: 100%;
 	height: 25vh;
@@ -147,8 +145,6 @@ em {
 }
 
 /* individual layers */
-
-/* prefix this shit */
 
 .wave_1 {
   animation-name: wave_1;
@@ -207,11 +203,23 @@ em {
 
 /* wave animations */
 
-/* prefix this shit */
+@-webkit-keyframes wave_1 {
+    from { -webkit-transform: rotate(0deg)   translatey(-0.61em) rotate(0deg); 
+        transform: rotate(0deg)   translatey(-0.61em) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translatey(-0.61em) rotate(-360deg); 
+        transform: rotate(360deg) translatey(-0.61em) rotate(-360deg); }
+}
 
 @keyframes wave_1 {
 	from { transform: rotate(0deg)   translatey(-0.61em) rotate(0deg); }
 	to   { transform: rotate(360deg) translatey(-0.61em) rotate(-360deg); }
+}
+
+@-webkit-keyframes wave_2 {
+    from { -webkit-transform: rotate(0deg)   translatey(-0.77em) rotate(0deg);
+        transform: rotate(0deg)   translatey(-0.77em) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translatey(-0.77em) rotate(-360deg); 
+        transform: rotate(360deg) translatey(-0.77em) rotate(-360deg); }
 }
 
 @keyframes wave_2 {
@@ -219,14 +227,35 @@ em {
 	to   { transform: rotate(360deg) translatey(-0.77em) rotate(-360deg); }
 }
 
+@-webkit-keyframes wave_3 {
+    from { -webkit-transform: rotate(0deg)   translatey(-0.96em) rotate(0deg);
+        transform: rotate(0deg)   translatey(-0.96em) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translatey(-0.96em) rotate(-360deg);
+        transform: rotate(360deg) translatey(-0.96em) rotate(-360deg); }
+}
+
 @keyframes wave_3 {
 	from { transform: rotate(0deg)   translatey(-0.96em) rotate(0deg); }
 	to   { transform: rotate(360deg) translatey(-0.96em) rotate(-360deg); }
 }
 
+@-webkit-keyframes wave_4 {
+    from { -webkit-transform: rotate(0deg)   translatey(-1.2em) rotate(0deg);
+        transform: rotate(0deg)   translatey(-1.2em) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translatey(-1.2em) rotate(-360deg);
+        transform: rotate(360deg) translatey(-1.2em) rotate(-360deg); }
+}
+
 @keyframes wave_4 {
 	from { transform: rotate(0deg)   translatey(-1.2em) rotate(0deg); }
 	to   { transform: rotate(360deg) translatey(-1.2em) rotate(-360deg); }
+}
+
+@-webkit-keyframes wave_5 {
+    from { -webkit-transform: rotate(0deg)   translatey(-1.5em) rotate(0deg); 
+        transform: rotate(0deg)   translatey(-1.5em) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translatey(-1.5em) rotate(-360deg); 
+        transform: rotate(360deg) translatey(-1.5em) rotate(-360deg); }
 }
 
 @keyframes wave_5 {
