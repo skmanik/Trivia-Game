@@ -31,22 +31,38 @@ var correctA = 0;
 // var that stores incorrect answers
 var incorrectA = 0;
 
+// var that stores default timer
+var defaultTimer;
+
 // ================== GAME STUFF
 // =============================
 
 // function that displays questions on the page
 function renderQuestion() {
 
-    // allows options to be selected
-    $(".option-list").on("click", ".list-group-item", answerSelected);
-
     // display
     $(".list-group-item").removeClass("correct").removeClass("incorrect");
 
+    // allows options to be selected
+    $(".option-list").on("click", ".list-group-item", answerSelected);
+
+    // checks to make sure there are still questions left (if not, proceed to end page)
     if (questionIndex <= (questionArr.length - 1)) {
 
-        // setTimeout(function() {
-        // }, 1000);
+        // if user sucks and doesn't press anything
+        clearTimeout(defaultTimer);
+
+        defaultTimer = setTimeout(function() {
+
+            $(".option-list").off("click", ".list-group-item", answerSelected);
+
+            questionIndex++;
+            incorrectA++;
+            renderQuestion();
+
+            console.log("Timeout expired", questionIndex);
+
+        }, 3000);
 
         // display
         $("#question-panel").text(questionArr[questionIndex].text);
@@ -60,7 +76,7 @@ function renderQuestion() {
 
     else {
 
-        // turns event off
+        // turns option event off
         $(".option-list").off("click", ".list-group-item", answerSelected);
 
         // display
@@ -78,18 +94,27 @@ function renderQuestion() {
 
 function answerSelected() {
 
-    // turns event off after one performance
+    // turns option event off after one performance
     $(".option-list").off("click", ".list-group-item", answerSelected);
     console.log("Answer clicked!");
 
+    // clears default timeout so game doesn't get sad
+    clearTimeout(defaultTimer);
+
+    showAnswer($(this));
+
+};
+
+function showAnswer(clicked){
+
     // if answer is correct
-    if ($(this).attr("id") === questionArr[questionIndex].answer[0]) {
+    if (clicked.attr("id") === questionArr[questionIndex].answer[0]) {
 
         correctA++;
 
         // display
         $("#question-panel").text("A: " + questionArr[questionIndex].answer[1]);
-        $(this).addClass("correct");
+        clicked.addClass("correct");
         console.log("Plankton voice: CORRRREECT!");
 
     }
@@ -101,7 +126,7 @@ function answerSelected() {
 
         // display
         $("#question-panel").text("A: " + questionArr[questionIndex].answer[1]);
-        $(this).addClass("incorrect");
+        clicked.addClass("incorrect");
         $("#" + questionArr[questionIndex].answer).addClass("correct");
         console.log("Dwight Schrute voice: FALSE!");
 
@@ -112,47 +137,12 @@ function answerSelected() {
         questionIndex++;
         renderQuestion();
 
-    }, 1000);
+        console.log("Answer displayed", questionIndex);
+
+    }, 3000);
 
 };
 
-function showAnswer(){
-
-    // if answer is correct
-    if ($(this).attr("id") === questionArr[questionIndex].answer[0]) {
-
-        correctA++;
-
-        // display
-        $("#question-panel").text("A: " + questionArr[questionIndex].answer[1]);
-        $(this).addClass("correct");
-        console.log("Plankton voice: CORRRREECT!");
-
-    }
-
-    // if answer is false
-    else {
-
-        incorrectA++;
-
-        // display
-        $("#question-panel").text("A: " + questionArr[questionIndex].answer[1]);
-        $(this).addClass("incorrect");
-        $("#" + questionArr[questionIndex].answer).addClass("correct");
-        console.log("Dwight Schrute voice: FALSE!");
-
-    }
-
-    setTimeout(function() {
-
-        questionIndex++;
-        renderQuestion();
-
-    }, 1000);
-
-};
-
-// gotta do this at some point questionIndex++;
 renderQuestion();
 
 // document ready closing tag
