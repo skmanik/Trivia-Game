@@ -19,7 +19,52 @@ var questionArr = [
         text: "Spongebob has owned which of the following snails?",
         answer: ["o-c", "Gary, Larry, and Jerry"],
         options: ["Gary", "Gary and Larry" , "Gary, Larry, and Jerry", "Gary and Snellie"],
-    }
+    },
+    {
+        text: "What is Plankton's first name?",
+        answer: ["o-a", "Sheldon"],
+        options: ["Sheldon", "Earl" , "Plankton", "Smitty Werbenjagermanjensen"],
+    },
+    {
+        text: "What does Spongebob give Squidward for Bikini Bottom's very first Christmas?",
+        answer: ["o-d", "A driftwood clarinet"],
+        options: ["Sweater made of eyelashes", "Jellyfish" , "A pie that's actually a bomb", "A driftwood clarinet"],
+    },
+    {
+        text: "In the episode 'Band Geeks', which car 'left its lights on' according to Patrick?",
+        answer: ["o-b", "White Sedan"],
+        options: ["Black Stationwagon", "White Sedan", "White Van", "Red Hatchback"],
+    },
+    {
+        text: "In the episode 'Pizza Delivery', which drink did the angry customer order with his Krusty Krab Pizza? ",
+        answer: ["o-c", "Diet Dr. Kelp"],
+        options: ["Kelp Shake", "Reef Cola", "Diet Dr. Kelp", "Water"],
+    },
+    {
+        text: "Who is Pearl's ex-boyfriend (a.k.a. 'long, tan, and handsome')?",
+        answer: ["o-c", "Octavius Rex"],
+        options: ["Squidward", "Billy Fishkins" , "Octavius Rex", "Bryan Flounder"],
+    },
+    {
+        text: "What is the name of the jellyfishing club led by Kevin the Sea Cucumber?",
+        answer: ["o-a", "Jelly Spotters"],
+        options: ["Jelly Spotters", "Kevin's Krew" , "Jellyfish Catchers", "Jellyfish Fan Club"],
+    },
+    {
+        text: "According to Mr. Krabs, how many 'bad words' are there if you're a sailor?",
+        answer: ["o-b", "13"],
+        options: ["7", "13" , "11", "16"],
+    },
+    {
+        text: "In the episode 'Big Pink Loser', why does Patrick get his first trophy?",
+        answer: ["o-a", "Doing absolutely nothing longer than anyone else"],
+        options: ["Doing absolutely nothing longer than anyone else", "For copying Spongebob" , "For opening a jar", "For being Spongebob's best friend"],
+    },
+    {
+        text: "According to Karen's calculations, what is Plankton made of?",
+        answer: ["o-c", "1% Evil 99% Hot Gas"],
+        options: ["50% Evil 50% Chum", "25% Evil 75% Protozoa" , "1% Evil 99% Hot Gas", "10% Evil 90% Algae "],
+    },
 ];
 
 // var that remembers what question we're on
@@ -145,7 +190,7 @@ function showAnswer(clicked){
         renderQuestion();
         console.log("Answer displayed", questionIndex);
 
-    }, 5000);
+    }, 1000);
 
 };
 
@@ -165,7 +210,7 @@ function showAnswerDefault () {
         questionIndex++;
         renderQuestion();
 
-    }, 5000);
+    }, 1000);
 
 };
 
