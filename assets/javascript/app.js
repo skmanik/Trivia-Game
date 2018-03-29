@@ -7,17 +7,17 @@ $(document).ready(function() {
 var questionArr = [
     {
         text: "What is inside the 'Secret Box' that Patrick hides from Spongebob?",
-        answer: "o-d",
+        answer: ["o-d", "Both A and C"],
         options: ["A string", "A cookie for Gary" , "An embarrassing photo of Spongebob at the Christmas Party", "Both A and C"],
     },
     {
         text: "What is the name of Squidward's arch-nemesis from high school band class?",
-        answer: "Squilliam Fancyson",
+        answer: ["o-b", "Squilliam Fancyson"],
         options: ["Squillard Fancyboat", "Squilliam Fancyson" , "Squillward Tortellini", "Spongebob Squarepants"],
     },
     {
         text: "Spongebob has owned which of the following snails?",
-        answer: "Gary, Larry, and Jerry",
+        answer: ["o-c", "Gary, Larry, and Jerry"],
         options: ["Gary", "Gary and Larry" , "Gary, Larry, and Jerry", "Gary and Snellie"],
     }
 ];
@@ -33,6 +33,9 @@ var incorrectA = 0;
 
 // function that displays questions on the page
 function renderQuestion() {
+
+    // allows options to be selected
+    $(".option-list").on("click", ".list-group-item", answerSelected);
 
     if (questionIndex <= (questionArr.length - 1)) {
 
@@ -64,22 +67,30 @@ function renderQuestion() {
 // ================== GAME START
 // =============================
 
+// questionIndex++;
+
 renderQuestion();
 
-// activates when user selects answer
-$(".option-list").on("click", ".list-group-item", function() {
+function answerSelected() {
+
+    // setTimeout(function() {
+
+    //     console.log("Is anything happening?")
+    //     renderQuestion();
+
+    // }, 1000);
 
     // turns event off after one performance
-    $(".option-list").off("click", ".list-group-item");
+    $(".option-list").off("click", ".list-group-item", answerSelected);
     console.log("Answer clicked!");
 
     // if answer is correct
-    if ($(this).attr("id") === questionArr[questionIndex].answer) {
+    if ($(this).attr("id") === questionArr[questionIndex].answer[0]) {
 
         correctA++;
 
         // display
-        $("#question-panel").text("A: " + questionArr[questionIndex].answer);
+        $("#question-panel").text("A: " + questionArr[questionIndex].answer[1]);
         $(this).addClass("correct");
         console.log("Plankton voice: CORRRREECT!");
 
@@ -91,14 +102,14 @@ $(".option-list").on("click", ".list-group-item", function() {
         incorrectA++;
 
         // display
-        $("#question-panel").text("A: " + questionArr[questionIndex].answer);
+        $("#question-panel").text("A: " + questionArr[questionIndex].answer[1]);
         $(this).addClass("incorrect");
         $("#" + questionArr[questionIndex].answer).addClass("correct");
         console.log("Dwight Schrute voice: FALSE!");
 
     }
 
-});
+};
 
 // document ready closing tag
 });
