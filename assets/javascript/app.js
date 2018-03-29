@@ -36,11 +36,6 @@ var questionArr = [
         options: ["Black Stationwagon", "White Sedan", "White Van", "Red Hatchback"],
     },
     {
-        text: "In the episode 'Pizza Delivery', which drink did the angry customer order with his Krusty Krab Pizza? ",
-        answer: ["o-c", "Diet Dr. Kelp"],
-        options: ["Kelp Shake", "Reef Cola", "Diet Dr. Kelp", "Water"],
-    },
-    {
         text: "Who is Pearl's ex-boyfriend (a.k.a. 'long, tan, and handsome')?",
         answer: ["o-c", "Octavius Rex"],
         options: ["Squidward", "Billy Fishkins" , "Octavius Rex", "Bryan Flounder"],
@@ -59,12 +54,7 @@ var questionArr = [
         text: "In the episode 'Big Pink Loser', why does Patrick get his first trophy?",
         answer: ["o-a", "Doing absolutely nothing longer than anyone else"],
         options: ["Doing absolutely nothing longer than anyone else", "For copying Spongebob" , "For opening a jar", "For being Spongebob's best friend"],
-    },
-    {
-        text: "According to Karen's calculations, what is Plankton made of?",
-        answer: ["o-c", "1% Evil 99% Hot Gas"],
-        options: ["50% Evil 50% Chum", "25% Evil 75% Protozoa" , "1% Evil 99% Hot Gas", "10% Evil 90% Algae "],
-    },
+    }
 ];
 
 // var that remembers what question we're on
