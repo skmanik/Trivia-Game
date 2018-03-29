@@ -31,13 +31,22 @@ var correctA = 0;
 // var that stores incorrect answers
 var incorrectA = 0;
 
+// ================== GAME STUFF
+// =============================
+
 // function that displays questions on the page
 function renderQuestion() {
 
     // allows options to be selected
     $(".option-list").on("click", ".list-group-item", answerSelected);
 
+    // display
+    $(".list-group-item").removeClass("correct").removeClass("incorrect");
+
     if (questionIndex <= (questionArr.length - 1)) {
+
+        // setTimeout(function() {
+        // }, 1000);
 
         // display
         $("#question-panel").text(questionArr[questionIndex].text);
@@ -51,11 +60,14 @@ function renderQuestion() {
 
     else {
 
+        // turns event off
+        $(".option-list").off("click", ".list-group-item", answerSelected);
+
         // display
         $("#question-panel").text("Game's over! Try again?");
         $(".o-label").detach();
-        $("#o-c .opt").detach();
-        $("#o-d .opt").detach();
+        $("#o-c").css({"opacity": "0", "cursor": "default"});
+        $("#o-d").css({"opacity": "0", "cursor": "default"});
         $("#o-a .opt").text("Correct answers: " + correctA);
         $("#o-b .opt").text("Incorrect answers: " + incorrectA);
         console.log("Show's over, Spongebob!");
@@ -64,21 +76,7 @@ function renderQuestion() {
 
 };
 
-// ================== GAME START
-// =============================
-
-// questionIndex++;
-
-renderQuestion();
-
 function answerSelected() {
-
-    // setTimeout(function() {
-
-    //     console.log("Is anything happening?")
-    //     renderQuestion();
-
-    // }, 1000);
 
     // turns event off after one performance
     $(".option-list").off("click", ".list-group-item", answerSelected);
@@ -109,7 +107,53 @@ function answerSelected() {
 
     }
 
+    setTimeout(function() {
+
+        questionIndex++;
+        renderQuestion();
+
+    }, 1000);
+
 };
+
+function showAnswer(){
+
+    // if answer is correct
+    if ($(this).attr("id") === questionArr[questionIndex].answer[0]) {
+
+        correctA++;
+
+        // display
+        $("#question-panel").text("A: " + questionArr[questionIndex].answer[1]);
+        $(this).addClass("correct");
+        console.log("Plankton voice: CORRRREECT!");
+
+    }
+
+    // if answer is false
+    else {
+
+        incorrectA++;
+
+        // display
+        $("#question-panel").text("A: " + questionArr[questionIndex].answer[1]);
+        $(this).addClass("incorrect");
+        $("#" + questionArr[questionIndex].answer).addClass("correct");
+        console.log("Dwight Schrute voice: FALSE!");
+
+    }
+
+    setTimeout(function() {
+
+        questionIndex++;
+        renderQuestion();
+
+    }, 1000);
+
+};
+
+// gotta do this at some point questionIndex++;
+renderQuestion();
 
 // document ready closing tag
 });
