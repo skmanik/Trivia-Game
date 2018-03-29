@@ -168,7 +168,7 @@ $(document).ready(function() {
             // display
             $("#question-panel").html("Tartar sauce! The correct answer was... " + "<em>" + questionArr[questionIndex].answer[1] + "</em>");
             clicked.addClass("incorrect");
-            $("#" + questionArr[questionIndex].answer).addClass("correct");
+            $("#" + questionArr[questionIndex].answer[0]).addClass("correct");
             console.log("Dwight Schrute voice: FALSE!");
 
         }
@@ -191,7 +191,7 @@ $(document).ready(function() {
 
         // display
         $("#question-panel").html("Fish paste! The correct answer was... " + "<em>" + questionArr[questionIndex].answer[1] + "</em>");
-        $("#" + questionArr[questionIndex].answer).addClass("correct");
+        $("#" + questionArr[questionIndex].answer[0]).addClass("correct");
         console.log("Dwight Schrute voice: NO ANSWER GIVEN!");
 
         // delay on next question so you have time to read answer
