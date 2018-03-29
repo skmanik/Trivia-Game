@@ -7,18 +7,18 @@ $(document).ready(function() {
 var questionArr = [
     {
         text: "What is inside the 'Secret Box' that Patrick hides from Spongebob?",
-        answer: "D: Both A and C",
+        answer: "o-d",
         options: ["A string", "A cookie for Gary" , "An embarrassing photo of Spongebob at the Christmas Party", "Both A and C"],
     },
     {
         text: "What is the name of Squidward's arch-nemesis from high school band class?",
-        answer: "B: Squilliam Fancyson",
-        options: ["A: Squillard Fancyboat", "B: Squilliam Fancyson" , "C: Squillward Tortellini", "D: Spongebob Squarepants"],
+        answer: "Squilliam Fancyson",
+        options: ["Squillard Fancyboat", "Squilliam Fancyson" , "Squillward Tortellini", "Spongebob Squarepants"],
     },
     {
         text: "Spongebob has owned which of the following snails?",
-        answer: "C: Gary, Larry, and Jerry",
-        options: ["A: Gary", "B: Gary and Larry" , "C: Gary, Larry, and Jerry", "D: Gary and Snellie"],
+        answer: "Gary, Larry, and Jerry",
+        options: ["Gary", "Gary and Larry" , "Gary, Larry, and Jerry", "Gary and Snellie"],
     }
 ];
 
@@ -38,7 +38,33 @@ function renderQuestion() {
         $("#o-d .opt").text(questionArr[questionIndex].options[3]);
 
         console.log("Game is still going!")
-        
+
+        // activates when user selects answer
+        $(".option-list").on("click", ".list-group-item", function() {
+
+            // turns event off after one performance
+            $(".option-list").off("click", ".list-group-item");
+            console.log("Answer clicked!");
+
+            // if answer is correct
+            if ($(this).attr("id") === questionArr[questionIndex].answer) {
+
+                $(this).addClass("correct");
+                console.log("Plankton voice: CORRRREECT!");
+
+            }
+
+            // if answer is false
+            else {
+
+                $(this).addClass("incorrect");
+                $("#" + questionArr[questionIndex].answer).addClass("correct");
+                console.log("Dwight Schrute voice: FALSE!");
+
+            }
+
+        });
+
     }
 
     else {

@@ -71,6 +71,24 @@ em {
     font-weight: 700;
 }
 
+/* incorrect and correct buttons */
+
+.option-list .incorrect {
+    background: #d05555 !important;
+}
+
+.option-list .incorrect .o-label {
+    color: #d05555 !important;
+}
+
+.option-list .correct {
+    background: #22ad4d !important;
+}
+
+.option-list .correct .o-label {
+    color: #22ad4d !important;
+}
+
 /* ====================== */
 /* ===== ANIMATIONS ===== */
 /* ====================== */
