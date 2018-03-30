@@ -21,12 +21,12 @@ $(document).ready(function() {
             options: ["Gary", "Gary and Larry" , "Gary, Larry, and Jerry", "Gary and Snellie"],
         },
         {
-            text: "What is Plankton's first name?",
+            text: "What's Plankton's first name?",
             answer: ["o-a", "Sheldon"],
             options: ["Sheldon", "Earl" , "Plankton", "Smitty Werbenjagermanjensen"],
         },
         {
-            text: "What does Spongebob give Squidward for Bikini Bottom's very first Christmas?",
+            text: "What does Spongebob give Squidward for Bikini Bottom's first Christmas?",
             answer: ["o-d", "A driftwood clarinet"],
             options: ["Sweater made of eyelashes", "Jellyfish" , "A pie that's actually a bomb", "A driftwood clarinet"],
         },
@@ -41,7 +41,7 @@ $(document).ready(function() {
             options: ["Squidward", "Billy Fishkins" , "Octavius Rex", "Bryan Flounder"],
         },
         {
-            text: "What is the name of the jellyfishing club led by Kevin the Sea Cucumber?",
+            text: "What's the name of the jellyfishing club led by Kevin the Sea Cucumber?",
             answer: ["o-a", "Jelly Spotters"],
             options: ["Jelly Spotters", "Kevin's Krew" , "Jellyfish Catchers", "Jellyfish Fan Club"],
         },
@@ -54,6 +54,31 @@ $(document).ready(function() {
             text: "In the episode 'Big Pink Loser', why does Patrick get his first trophy?",
             answer: ["o-a", "Doing absolutely nothing longer than anyone else"],
             options: ["Doing absolutely nothing longer than anyone else", "For copying Spongebob" , "For opening a jar", "For being Spongebob's best friend"],
+        },
+        {
+            text: "What's Plankton made of?",
+            answer: ["o-a", "1% Evil 99% Hot Gas"],
+            options: ["1% Evil 99% Hot Gas", "50% Evil 50% Chum" , "25% Evil 75% Protozoa", "10% Evil 90% Algae"],
+        },
+        {
+            text: "Which of the following ingredients is NOT used to make Spongebob's sundae?",
+            answer: ["o-b", "Ice cream"],
+            options: ["Ketchup", "Ice cream" , "Onions", "Peanuts"],
+        },
+        {
+            text: "What kind of worm once rampaged through Bikini Bottom?",
+            answer: ["o-d", "Alaskan Bull Worm"],
+            options: ["Giant Sea Worm", "Big Scary Pink Worm" , "Icelandic Sea Worm", "Alaskan Bull Worm"],
+        },
+        {
+            text: "In the episode 'Pizza Delivery', what drink does the angry customer order with his Krusty Krab Pizza?",
+            answer: ["o-c", "Diet Dr. Kelp"],
+            options: ["Kelp Shake", "Reef Cola" , "Diet Dr. Kelp", "Water"],
+        },
+        {
+            text: "What are the names of the couple who thought they were Patrick's parents?",
+            answer: ["o-a", "Marty and Janet"],
+            options: ["Marty and Janet", "Pat and Kat" , "Barty and Jane", "Patrick doesn't have parents"],
         }
     ];
 
@@ -105,7 +130,7 @@ $(document).ready(function() {
             $("#o-b .opt").text(questionArr[questionIndex].options[1]);
             $("#o-c .opt").text(questionArr[questionIndex].options[2]);
             $("#o-d .opt").text(questionArr[questionIndex].options[3]);
-            console.log("Game is still going!")
+            console.log("Game is still going!");
 
         }
 
